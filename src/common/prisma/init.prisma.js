@@ -5,7 +5,7 @@ async function testConnection() {
     try {
       // Thử lấy tất cả user từ cơ sở dữ liệu
       const users = await prisma.nguoi_dung.findMany(); 
-      console.log('Database connection successful! Users found:', users);
+      console.log('Database connection successful! ');
     } catch (error) {
       console.error('Database connection failed:', error);
     } finally {

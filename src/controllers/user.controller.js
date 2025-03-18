@@ -27,7 +27,7 @@ export const userController = {
       const result = await userService.findOne(req);
       const response = responseSuccess(
         result,
-        `Get user #${req.params.id} successfully`
+        `Get  #${req.params.id} successfully`
       );
       res.status(response.code).json(response);
     } catch (err) {
@@ -87,6 +87,34 @@ export const userController = {
         200
       );
       res.status(response.code).json(response);
+    } catch (err) {
+      next(err);
+    }
+  },
+  getInfo: async function (req, res, next) {
+    try {
+      const data = await userService.getInfo(req);
+      // console.log({result})
+      const resData = responseSuccess(
+        data,
+        `Get info successfullyadsasdada`,
+        200
+      );
+      res.status(resData.code).json(resData);
+    } catch (err) {
+      next(err);
+    }
+  },
+  updateUser: async function (req, res, next) {
+    try {
+      const data = await userService.updateUser(req);
+      // console.log({result})
+      const resData = responseSuccess(
+        data,
+        `update user successfully`,
+        200
+      );
+      res.status(resData.code).json(resData);
     } catch (err) {
       next(err);
     }

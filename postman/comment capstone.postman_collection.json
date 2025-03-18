@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "fdadd29b-958a-436b-ac33-a502635050c8",
+		"name": "comment capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39783649"
+	},
+	"item": [
+		{
+			"name": "comment",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hinh_id\":\"2\",\r\n    \"nguoi_dung_id\":\"1\",\r\n    \"noi_dung\":\"anh yêu em\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}comment/post-comment",
+					"host": [
+						"{{domain}}comment"
+					],
+					"path": [
+						"post-comment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
